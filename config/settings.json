@@ -1,0 +1,57 @@
+{
+    "openai": {
+      "api_key": "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",
+      "agents": {
+        "analyst": {
+          "model": "gpt-4o-mini",
+          "temperature": 0.3,
+          "max_tokens": 1000,
+          "system_message": "Extract identity data (Username/Email, First/Last Name, Department, Role, access levels etc.) from the document and return as JSON for SailPoint import.",
+          "messages": [
+            {
+              "role": "user",
+              "content": "Analyze the attached document for identity data. Provide the raw output."
+            }
+          ]
+        },
+        "researcher": {
+          "model": "gpt-4o-mini",
+          "temperature": 0.3,
+          "max_tokens": 4000,
+          "system_message": "You are a SailPoint architect. Enrich the analyst's findings with expert commentary and suggest data transformations for Identity Security Cloud import, specifically as it pertains to delimited file sources. Refrain from reposting the Analysts JSON. You should provide only your own insights."
+        },
+        "engineer": {
+          "model": "gpt-4o-mini",
+          "temperature": 0.3,
+          "max_tokens": 1000,
+          "system_message": "You are a SailPoint engineer. Act on the researcher's insights and the clean and format the original JSON data and generate a CSV that meets SailPoint required specs."
+        },
+        "qa": {
+          "model": "gpt-4o-mini",
+          "temperature": 0.1,
+          "max_tokens": 1000,
+          "system_message": "You are QA. Verify that the engineer's output meets SailPoint file specs, compare the original and enginner's outputs ensuring data integrity and proper formatting. Respond with a JSON PASS/FAIL and feedback."
+        },
+        "pm": {
+          "model": "gpt-4o-mini",
+          "temperature": 0.5,
+          "max_tokens": 2000,
+          "system_message": "As PM, oversee the project and ensure team collaboration. The task is complete only when QA passes the output. Document the solution, issues, and resolutions concisely."
+        }
+      }
+    },
+    "sailpoint": {
+      "tenant": "https://easternbank.api.identitynow.com",
+      "client_id": "4c006b29746f427c9c50a655bd88377c",
+      "client_secret": "8877efa7f80cb747a300513de2f5e64bf3736eff28ef767d207af40791adfc4f",
+      "api_version": "v3",
+      "rate_limit": 100
+    },
+    "logging": {
+      "level": "DEBUG",
+      "format": "%(asctime)s %(levelname)s: %(message)s",
+      "file": "logs/execution.log"
+    },
+    "human_intervention": false
+  }
+  
