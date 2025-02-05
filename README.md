@@ -73,33 +73,4 @@ ai_agent_swarm/
 ├── main.py
 ├── requirements.txt
 ├── README.md
-```
 
-## 6. Implementation Roadmap
-
-**Phase 1: Foundational Development**  
-- [x] Establish Python environment & dependency management  
-- [x] Implement SailPoint API communication (Researcher Agent)  
-- [x] Integrate JSON-based RAG knowledge base  
-- [x] Implement Windows File System storage  
-- [x] Configure console logging & diagnostics  
-- [x] Incorporate Azure OpenAI API for LLM reasoning
-
-**Phase 2: AI Agent Expansion**  
-- [ ] Expand QA Agent for compliance validation  
-- [ ] Optimize Engineer Agent for high-throughput data processing  
-- [ ] Enhance Researcher Agent with autonomous API call derivation
-
-**Phase 3: Optimization & Deployment**  
-- [ ] Improve execution parallelism for efficiency  
-- [ ] Enhance structured logging & error handling  
-
-## 7. Final Considerations
-
-This multi-agent system integrates AutoGen, Azure OpenAI, and the SailPoint SDK within a Python ecosystem optimized for Windows environments. Designed for scalability and iterative refinement, it ensures:
-- Modular adaptability for incremental enhancements  
-- Robust error handling for fault-tolerant operations  
-- Real-time logging for enhanced observability  
-- Self-optimizing AI workflows that improve over time
-
----
