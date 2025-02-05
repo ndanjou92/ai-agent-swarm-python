@@ -3,14 +3,14 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_core import CancellationToken
 
-class EngineerAgent(AssistantAgent):
+class ArchitectAgent(AssistantAgent):
     def __init__(self, config: dict):
         model = config["model"]
         api_key = config["api_key"]
         system_message = config["system_message"]
         model_client = OpenAIChatCompletionClient(model=model, api_key=api_key)
-        super().__init__(name="engineer", system_message=system_message, model_client=model_client)
+        super().__init__(name="architect", system_message=system_message, model_client=model_client)
         self.config = config
 
-def create(config: dict) -> EngineerAgent:
-    return EngineerAgent(config)
+def create(config: dict) -> ArchitectAgent:
+    return ArchitectAgent(config)

@@ -6,37 +6,31 @@
           "model": "gpt-4o-mini",
           "temperature": 0.3,
           "max_tokens": 1000,
-          "system_message": "Extract identity data (Username/Email, First/Last Name, Department, Role, access levels etc.) from the document and return as JSON for SailPoint import.",
-          "messages": [
-            {
-              "role": "user",
-              "content": "Analyze the attached document for identity data. Provide the raw output."
-            }
-          ]
+          "system_message": "You are a data analyst. Your job will be to analyze files and produce structed data based on the relationships you can glean."
         },
         "researcher": {
           "model": "gpt-4o-mini",
           "temperature": 0.3,
           "max_tokens": 4000,
-          "system_message": "You are a SailPoint architect. Enrich the analyst's findings with expert commentary and suggest data transformations for Identity Security Cloud import, specifically as it pertains to delimited file sources. Refrain from reposting the Analysts JSON. You should provide only your own insights."
+          "system_message": "You are a SailPoint researcher. Enrich the analyst's findings with expert citation from documentation and direct api access to sailpoint tenant configurations."
         },
         "engineer": {
           "model": "gpt-4o-mini",
           "temperature": 0.3,
           "max_tokens": 1000,
-          "system_message": "You are a SailPoint engineer. Act on the researcher's insights and the clean and format the original JSON data and generate a CSV that meets SailPoint required specs."
+          "system_message": "You are a SailPoint engineer. Act on the architects design and proposal and implement the solution."
         },
         "qa": {
           "model": "gpt-4o-mini",
           "temperature": 0.1,
           "max_tokens": 1000,
-          "system_message": "You are QA. Verify that the engineer's output meets SailPoint file specs, compare the original and enginner's outputs ensuring data integrity and proper formatting. Respond with a JSON PASS/FAIL and feedback."
+          "system_message": "You are QA. Verify that the team outputs meet the teams proposed solution and specs, compare files, cited information and chat conversation to deduce a success or failure."
         },
-        "pm": {
+        "architect": {
           "model": "gpt-4o-mini",
           "temperature": 0.5,
           "max_tokens": 2000,
-          "system_message": "As PM, oversee the project and ensure team collaboration. The task is complete only when QA passes the output. Document the solution, issues, and resolutions concisely."
+          "system_message": "As architect, design the the project solution to be implements. Use all context provided to come up with a proposal for the team."
         }
       }
     },
@@ -44,7 +38,7 @@
       "tenant": "https://easternbank.api.identitynow.com",
       "client_id": "4c006b29746f427c9c50a655bd88377c",
       "client_secret": "8877efa7f80cb747a300513de2f5e64bf3736eff28ef767d207af40791adfc4f",
-      "api_version": "v3",
+      "api_version": "v2024",
       "rate_limit": 100
     },
     "logging": {

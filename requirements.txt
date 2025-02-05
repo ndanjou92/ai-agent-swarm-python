@@ -4,3 +4,4 @@ openai>=1.0.0
 sailpoint>=1.0.0
 watchdog>=6.0.0
 colorama>=0.4.4
+autogen
