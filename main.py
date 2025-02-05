@@ -52,7 +52,7 @@ async def main_async():
     
     # Create a model client using the global API key.
     model_client = OpenAIChatCompletionClient(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         api_key=config_dict["analyst"]["api_key"],
         max_turns = 20,
         max_stalls = 3,
