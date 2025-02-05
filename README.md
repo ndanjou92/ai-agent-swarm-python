@@ -30,12 +30,11 @@ This project aims to develop a multi-agent AI-driven orchestration framework for
 **Agent-Based Orchestration**  
 1. User initializes execution via a command-line interface.  
 2. Analyst Agent identifies input data structures, validates completeness, and flags inconsistencies.  
-3. Researcher Agent queries the SailPoint API, executes contextual web searches, and synthesizes relevant API documentation.  
-4. Engineer Agent refines, structures, and processes data, ensuring it aligns with SailPoint schema.  
-5. QA Agent verifies compliance, detects anomalies, and refines transformations where needed.  
-6. PM Agent orchestrates multi-agent decision-making and workflow validation.  
-7. The validated output is stored, logged, and reported to the user.  
-8. Real-time logs provide traceability of the decision-making pipeline.
+3. Researcher Agent queries the SailPoint API, executes contextual web searches, and synthesizes relevant API documentation.
+4. Architect Agent orchestrates multi-agent decision-making and workflow validation.    
+5. Engineer Agent refines, structures, and processes data, ensuring it aligns with SailPoint schema.  
+6. QA Agent verifies compliance, detects anomalies, and refines transformations where needed.   
+
 
 ## 4. Initial Setup Instructions
 
@@ -71,16 +70,9 @@ ai_agent_swarm/
 │   └── execution.log
 ├── config/
 │   └── settings.json
-├── tests/
-│   ├── test_analyst_agent.py
-│   ├── test_researcher_agent.py
-│   ├── test_engineer_agent.py
-│   ├── test_qa_agent.py
-│   └── test_pm_agent.py
 ├── main.py
 ├── requirements.txt
 ├── README.md
-└── setup.py
 ```
 
 ## 6. Implementation Roadmap
