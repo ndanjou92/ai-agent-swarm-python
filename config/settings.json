@@ -1,6 +1,6 @@
 {
     "openai": {
-      "api_key": "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",
+      "api_key": <open ai key>
       "agents": {
         "analyst": {
           "model": "gpt-4o-mini",
